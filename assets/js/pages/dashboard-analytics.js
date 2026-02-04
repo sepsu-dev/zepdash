@@ -3,9 +3,9 @@
  */
 if (typeof echarts !== 'undefined') {
     // === BAR CHART ===
-    const barDom = document.getElementById('barChart');
-    if (barDom) {
-        const barChart = echarts.init(barDom);
+    const $barDom = $('#barChart');
+    if ($barDom.length) {
+        const barChart = echarts.init($barDom[0]);
         const barOption = {
             tooltip: { trigger: 'axis' },
             legend: { bottom: 0 },
@@ -30,13 +30,13 @@ if (typeof echarts !== 'undefined') {
             ]
         };
         barChart.setOption(barOption);
-        window.addEventListener('resize', () => barChart.resize());
+        $(window).on('resize', () => barChart.resize());
     }
 
     // === PIE CHART ===
-    const pieDom = document.getElementById('pieChart');
-    if (pieDom) {
-        const pieChart = echarts.init(pieDom);
+    const $pieDom = $('#pieChart');
+    if ($pieDom.length) {
+        const pieChart = echarts.init($pieDom[0]);
         const pieOption = {
             tooltip: { trigger: 'item', formatter: '{b}: {c} ({d}%)' },
             legend: { bottom: 0 },
@@ -63,6 +63,6 @@ if (typeof echarts !== 'undefined') {
             ]
         };
         pieChart.setOption(pieOption);
-        window.addEventListener('resize', () => pieChart.resize());
+        $(window).on('resize', () => pieChart.resize());
     }
 }

@@ -3,9 +3,9 @@
  */
 if (typeof echarts !== 'undefined') {
     // === ECOMMERCE ORDERS CHART ===
-    const ecommerceDom = document.getElementById('ecommerceOrdersChart');
-    if (ecommerceDom) {
-        const ecommerceChart = echarts.init(ecommerceDom);
+    const $ecommerceDom = $('#ecommerceOrdersChart');
+    if ($ecommerceDom.length) {
+        const ecommerceChart = echarts.init($ecommerceDom[0]);
         const ecommerceOption = {
             tooltip: { trigger: 'axis' },
             xAxis: { type: 'category', data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] },
@@ -24,13 +24,13 @@ if (typeof echarts !== 'undefined') {
             }]
         };
         ecommerceChart.setOption(ecommerceOption);
-        window.addEventListener('resize', () => ecommerceChart.resize());
+        $(window).on('resize', () => ecommerceChart.resize());
     }
 
     // === ECOMMERCE CATEGORY CHART ===
-    const categoryDom = document.getElementById('categoryChart');
-    if (categoryDom) {
-        const categoryChart = echarts.init(categoryDom);
+    const $categoryDom = $('#categoryChart');
+    if ($categoryDom.length) {
+        const categoryChart = echarts.init($categoryDom[0]);
         const categoryOption = {
             tooltip: { trigger: 'item' },
             legend: { top: 'bottom' },
@@ -49,15 +49,15 @@ if (typeof echarts !== 'undefined') {
             }]
         };
         categoryChart.setOption(categoryOption);
-        window.addEventListener('resize', () => categoryChart.resize());
+        $(window).on('resize', () => categoryChart.resize());
     }
 }
 
 // Tempus Dominus v6 for Ecommerce range
 if (typeof tempusDominus !== 'undefined') {
-    const dashRangeDom = document.getElementById('dash-range');
-    if (dashRangeDom) {
-        new tempusDominus.TempusDominus(dashRangeDom, {
+    const $dashRangeDom = $('#dash-range');
+    if ($dashRangeDom.length) {
+        new tempusDominus.TempusDominus($dashRangeDom[0], {
             display: {
                 components: { clock: false },
                 theme: 'light'

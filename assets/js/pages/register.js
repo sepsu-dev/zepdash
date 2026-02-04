@@ -1,7 +1,7 @@
 /**
  * Register Page Scripts
  */
-document.addEventListener('DOMContentLoaded', () => {
+$(function () {
     // Add register specific logic here
     console.log('Register page initialized');
 });

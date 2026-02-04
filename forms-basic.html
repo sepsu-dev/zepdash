@@ -320,19 +320,22 @@ new tempusDominus.TempusDominus(document.getElementById('td-range'), {
     <script src="assets/vendor/prism/prism.min.js"></script>
     <script src="assets/js/scripts.js"></script>
     <script>
-        $(document).ready(function () {
-            if (document.getElementById('td-date')) {
-                new tempusDominus.TempusDominus(document.getElementById('td-date'), {
+        $(function () {
+            const $dateEl = $('#td-date');
+            if ($dateEl.length) {
+                new tempusDominus.TempusDominus($dateEl[0], {
                     display: { components: { clock: false }, theme: 'light' }
                 });
             }
-            if (document.getElementById('td-datetime')) {
-                new tempusDominus.TempusDominus(document.getElementById('td-datetime'), {
+            const $datetimeEl = $('#td-datetime');
+            if ($datetimeEl.length) {
+                new tempusDominus.TempusDominus($datetimeEl[0], {
                     display: { theme: 'light' }
                 });
             }
-            if (document.getElementById('td-range')) {
-                new tempusDominus.TempusDominus(document.getElementById('td-range'), {
+            const $rangeEl = $('#td-range');
+            if ($rangeEl.length) {
+                new tempusDominus.TempusDominus($rangeEl[0], {
                     display: { components: { clock: false }, theme: 'light' }
                 });
             }

@@ -3,9 +3,9 @@
  */
 if (typeof echarts !== 'undefined') {
     // === CRM PIPELINE CHART ===
-    const pipelineDom = document.getElementById('pipelineChart');
-    if (pipelineDom) {
-        const pipelineChart = echarts.init(pipelineDom);
+    const $pipelineDom = $('#pipelineChart');
+    if ($pipelineDom.length) {
+        const pipelineChart = echarts.init($pipelineDom[0]);
         const pipelineOption = {
             tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
             grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
@@ -24,13 +24,13 @@ if (typeof echarts !== 'undefined') {
             }]
         };
         pipelineChart.setOption(pipelineOption);
-        window.addEventListener('resize', () => pipelineChart.resize());
+        $(window).on('resize', () => pipelineChart.resize());
     }
 
     // === CRM LEAD SOURCE CHART ===
-    const leadSourceDom = document.getElementById('leadSourceChart');
-    if (leadSourceDom) {
-        const leadSourceChart = echarts.init(leadSourceDom);
+    const $leadSourceDom = $('#leadSourceChart');
+    if ($leadSourceDom.length) {
+        const leadSourceChart = echarts.init($leadSourceDom[0]);
         const leadSourceOption = {
             tooltip: { trigger: 'item' },
             series: [{
@@ -50,6 +50,6 @@ if (typeof echarts !== 'undefined') {
             }]
         };
         leadSourceChart.setOption(leadSourceOption);
-        window.addEventListener('resize', () => leadSourceChart.resize());
+        $(window).on('resize', () => leadSourceChart.resize());
     }
 }

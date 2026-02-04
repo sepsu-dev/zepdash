@@ -8,9 +8,13 @@
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="assets/css/styles.css" rel="stylesheet" />`r`n
-    <link rel="stylesheet" href="assets/css/animate.min.css" />`r`n
-    <link rel="stylesheet" href="assets/css/sweetalert2.min.css" />`r`n    <link rel="stylesheet" href="assets/css/tempus-dominus.min.css" />`r`n    <link rel="stylesheet" href="assets/css/select2.min.css" /><link rel="stylesheet" href="assets/css/select2-bootstrap-5-theme.min.css" />`r`n    <link rel="stylesheet" href="assets/css/simplebar.min.css" />
+    <link href="assets/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/animate.min.css" />
+    <link rel="stylesheet" href="assets/css/sweetalert2.min.css" />
+    <link rel="stylesheet" href="assets/css/tempus-dominus.min.css" />
+    <link rel="stylesheet" href="assets/css/select2.min.css" />
+    <link rel="stylesheet" href="assets/css/select2-bootstrap-5-theme.min.css" />
+    <link rel="stylesheet" href="assets/css/simplebar.min.css" />
     <link rel="stylesheet" href="assets/css/phosphor/bold/style.css" />
     <link href="assets/vendor/prism/prism-light.min.css" rel="stylesheet" />
 </head>
@@ -43,7 +47,8 @@
                 <div class="zd-sidenav-menu" data-simplebar>
                     <div class="nav">
                         <h2 class="zd-sidenav-menu-heading">Menu</h2>
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#dashboardCollapse">
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#dashboardCollapse">
                             <div class="zd-nav-link-icon"><i class="ph-bold ph-house"></i></div>
                             <span>Dashboard</span>
                             <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
@@ -179,7 +184,7 @@
 &lt;/div&gt;
 
 // JavaScript
-new bootstrap.Toast(element).show();</code></pre>
+$('.toast').toast('show');</code></pre>
                                 </div>
                             </div>
                         </div>
@@ -279,55 +284,63 @@ Swal.fire({
             </section>
         </main>
     </div>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>`r`n
-    <script src="assets/js/sweetalert2.all.min.js"></script>`r`n  <script src="assets/js/popper.min.js"></script><script src="assets/js/tempus-dominus.min.js"></script>`r`n  <script src="assets/js/jquery.min.js"></script><script src="assets/js/select2.min.js"></script>`r`n  <script src="assets/js/simplebar.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/sweetalert2.all.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/tempus-dominus.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/select2.min.js"></script>
+    <script src="assets/js/simplebar.min.js"></script>
     <script src="assets/vendor/prism/prism.min.js"></script>
     <script src="assets/js/scripts.js"></script>
     <script>
-        document.getElementById('liveToastBtn').onclick = () => new bootstrap.Toast(document.getElementById('liveToast')).show();
-        document.getElementById('successToastBtn').onclick = () => new bootstrap.Toast(document.getElementById('successToast')).show();
-        document.getElementById('dangerToastBtn').onclick = () => new bootstrap.Toast(document.getElementById('dangerToast')).show();
+        $(function () {
+            // Bootstrap Toasts
+            $('#liveToastBtn').on('click', () => new bootstrap.Toast($('#liveToast')[0]).show());
+            $('#successToastBtn').on('click', () => new bootstrap.Toast($('#successToast')[0]).show());
+            $('#dangerToastBtn').on('click', () => new bootstrap.Toast($('#dangerToast')[0]).show());
 
-        // SweetAlert2 Examples
-        document.getElementById('swalBasic').onclick = () => Swal.fire('Basic SweetAlert2 message!');
-        document.getElementById('swalSuccess').onclick = () => Swal.fire({
-            icon: 'success',
-            title: 'Success!',
-            text: 'Your action was completed successfully.',
-            confirmButtonColor: '#006fee'
-        });
-        document.getElementById('swalError').onclick = () => Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Something went wrong!',
-            confirmButtonColor: '#f31260'
-        });
-        document.getElementById('swalConfirm').onclick = () => Swal.fire({
-            title: 'Are you sure?',
-            text: "This action cannot be undone!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#f5a524',
-            cancelButtonColor: '#71717a',
-            confirmButtonText: 'Yes, proceed!'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                Swal.fire({
-                    title: 'Confirmed!',
-                    icon: 'success',
-                    confirmButtonColor: '#006fee'
-                });
-            }
-        });
-        document.getElementById('swalCustom').onclick = () => Swal.fire({
-            title: 'Custom Styles',
-            text: 'I match the zepdash-admin theme!',
-            icon: 'info',
-            padding: '2rem',
-            color: '#11181c',
-            background: '#fff',
-            confirmButtonColor: '#006fee',
-            backdrop: `rgba(0,111,238,0.15)`
+            // SweetAlert2 Examples
+            $('#swalBasic').on('click', () => Swal.fire('Basic SweetAlert2 message!'));
+            $('#swalSuccess').on('click', () => Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: 'Your action was completed successfully.',
+                confirmButtonColor: '#006fee'
+            }));
+            $('#swalError').on('click', () => Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+                confirmButtonColor: '#f31260'
+            }));
+            $('#swalConfirm').on('click', () => Swal.fire({
+                title: 'Are you sure?',
+                text: "This action cannot be undone!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#f5a524',
+                cancelButtonColor: '#71717a',
+                confirmButtonText: 'Yes, proceed!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: 'Confirmed!',
+                        icon: 'success',
+                        confirmButtonColor: '#006fee'
+                    });
+                }
+            }));
+            $('#swalCustom').on('click', () => Swal.fire({
+                title: 'Custom Styles',
+                text: 'I match the zepdash-admin theme!',
+                icon: 'info',
+                padding: '2rem',
+                color: '#11181c',
+                background: '#fff',
+                confirmButtonColor: '#006fee',
+                backdrop: `rgba(0,111,238,0.15)`
+            }));
         });
     </script>
 </body>
