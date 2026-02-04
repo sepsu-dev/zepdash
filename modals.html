@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Modals - zepdash-admin</title>
+    <meta name="description" content="Bootstrap modal dialogs for user interactions." />
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/phosphor/bold/style.css" />
+    <link href="assets/vendor/prism/prism-light.min.css" rel="stylesheet" />
+</head>
+
+<body class="zd-nav-fixed">
+    <header>
+        <nav class="zd-topnav navbar navbar-expand navbar-light">
+            <div class="navbar-brand ps-3 d-flex align-items-center">
+                <img src="assets/img/logo.png" alt="logo" class="logo-navbar" />
+                <span class="ms-2 fw-semibold">zepdash-admin</span>
+            </div>
+            <button class="btn btn-light" id="sidebarToggle" aria-label="Toggle sidebar">
+                <i class="ph-bold ph-sidebar-simple"></i>
+            </button>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle dropdown-user" id="navbarDropdown" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <span><i class="ph-bold ph-user"></i> admin</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="layoutSidenav">
+        <aside id="layoutSidenav_nav">
+            <nav class="zd-sidenav accordion zd-sidenav-light" id="sidenavAccordion">
+                <div class="zd-sidenav-menu">
+                    <div class="nav">
+                        <h2 class="zd-sidenav-menu-heading">Menu</h2>
+                        <a class="nav-link" href="index.html">
+                            <div class="zd-nav-link-icon"><i class="ph-bold ph-house"></i></div><span>Dashboard</span>
+                        </a>
+                        <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#componentsCollapse"
+                            aria-expanded="true">
+                            <div class="zd-nav-link-icon"><i class="ph-bold ph-squares-four"></i></div>
+                            <span>Components</span>
+                            <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
+                        </a>
+                        <div class="collapse show" id="componentsCollapse" data-bs-parent="#sidenavAccordion">
+                            <nav class="zd-sidenav-menu-nested nav">
+                                <a class="nav-link" href="alerts.html">Alerts</a>
+                                <a class="nav-link" href="badges.html">Badges</a>
+                                <a class="nav-link" href="buttons.html">Buttons</a>
+                                <a class="nav-link" href="cards.html">Cards</a>
+                                <a class="nav-link active" href="modals.html">Modals</a>
+                                <a class="nav-link" href="tabs-accordions.html">Tabs & Accordions</a>
+                                <a class="nav-link" href="progress.html">Progress</a>
+                                <a class="nav-link" href="toasts.html">Toasts</a>
+                                <a class="nav-link" href="spinners.html">Spinners</a>
+                            </nav>
+                        </div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#formsCollapse">
+                            <div class="zd-nav-link-icon"><i class="ph-bold ph-textbox"></i></div><span>Forms</span>
+                            <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
+                        </a>
+                        <div class="collapse" id="formsCollapse" data-bs-parent="#sidenavAccordion">
+                            <nav class="zd-sidenav-menu-nested nav">
+                                <a class="nav-link" href="forms-basic.html">Basic Inputs</a>
+                                <a class="nav-link" href="forms-select.html">Select</a>
+                                <a class="nav-link" href="forms-checks.html">Checkboxes & Radios</a>
+                                <a class="nav-link" href="forms-layout.html">Form Layout</a>
+                                <a class="nav-link" href="forms-validation.html">Validation</a>
+                            </nav>
+                        </div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#tablesCollapse">
+                            <div class="zd-nav-link-icon"><i class="ph-bold ph-table"></i></div><span>Tables</span>
+                            <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
+                        </a>
+                        <div class="collapse" id="tablesCollapse" data-bs-parent="#sidenavAccordion">
+                            <nav class="zd-sidenav-menu-nested nav">
+                                <a class="nav-link" href="tables-basic.html">Basic Table</a>
+                                <a class="nav-link" href="tables-datatables.html">DataTables</a>
+                            </nav>
+                        </div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#pagesCollapse">
+                            <div class="zd-nav-link-icon"><i class="ph-bold ph-file"></i></div><span>Pages</span>
+                            <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
+                        </a>
+                        <div class="collapse" id="pagesCollapse" data-bs-parent="#sidenavAccordion">
+                            <nav class="zd-sidenav-menu-nested nav">
+                                <a class="nav-link" href="login.html">Login</a>
+                                <a class="nav-link" href="register.html">Register</a>
+                                <a class="nav-link" href="forgot-password.html">Forgot Password</a>
+                                <a class="nav-link" href="404.html">404 Error</a>
+                                <a class="nav-link" href="500.html">500 Error</a>
+                            </nav>
+                        </div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#utilitiesCollapse">
+                            <div class="zd-nav-link-icon"><i class="ph-bold ph-paint-brush"></i></div>
+                            <span>Utilities</span>
+                            <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
+                        </a>
+                        <div class="collapse" id="utilitiesCollapse" data-bs-parent="#sidenavAccordion">
+                            <nav class="zd-sidenav-menu-nested nav">
+                                <a class="nav-link" href="colors.html">Colors</a>
+                                <a class="nav-link" href="typography.html">Typography</a>
+                                <a class="nav-link" href="icons.html">Icons</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <footer class="zd-sidenav-footer"><small>Logged in as:</small>
+                    <div>admin</div>
+                </footer>
+            </nav>
+        </aside>
+
+        <main id="layoutSidenav_content">
+            <section class="container-fluid px-4">
+                <header class="my-4">
+                    <h1 class="h4 mb-0">Modals</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item">Components</li>
+                            <li class="breadcrumb-item active">Modals</li>
+                        </ol>
+                    </nav>
+                </header>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card mb-4">
+                            <div class="card-header fw-semibold">Basic Modal</div>
+                            <div class="card-body">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#basicModal">
+                                    Launch Demo Modal
+                                </button>
+                                <div class="code-wrapper">
+                                    <div class="code-header">
+                                        <button class="btn btn-sm btn-outline-primary btn-toggle-code"><i
+                                                class="ph-bold ph-code me-1"></i> Show Code</button>
+                                        <button class="btn btn-sm btn-outline-secondary btn-copy-code"><i
+                                                class="ph-bold ph-copy me-1"></i> Copy</button>
+                                    </div>
+                                    <pre class="code-snippet d-none"><code class="language-html">&lt;!-- Button trigger --&gt;
+&lt;button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"&gt;
+  Launch Modal
+&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div class="modal fade" id="myModal" tabindex="-1"&gt;
+  &lt;div class="modal-dialog"&gt;
+    &lt;div class="modal-content"&gt;
+      &lt;div class="modal-header"&gt;
+        &lt;h5 class="modal-title"&gt;Modal title&lt;/h5&gt;
+        &lt;button type="button" class="btn-close" data-bs-dismiss="modal"&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-body"&gt;Modal body text goes here.&lt;/div&gt;
+      &lt;div class="modal-footer"&gt;
+        &lt;button type="button" class="btn btn-secondary" data-bs-dismiss="modal"&gt;Close&lt;/button&gt;
+        &lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="card mb-4">
+                            <div class="card-header fw-semibold">Sizes</div>
+                            <div class="card-body">
+                                <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal"
+                                    data-bs-target="#smallModal">Small</button>
+                                <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal"
+                                    data-bs-target="#largeModal">Large</button>
+                                <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                    data-bs-target="#xlModal">Extra Large</button>
+                                <div class="code-wrapper">
+                                    <div class="code-header">
+                                        <button class="btn btn-sm btn-outline-primary btn-toggle-code"><i
+                                                class="ph-bold ph-code me-1"></i> Show Code</button>
+                                        <button class="btn btn-sm btn-outline-secondary btn-copy-code"><i
+                                                class="ph-bold ph-copy me-1"></i> Copy</button>
+                                    </div>
+                                    <pre class="code-snippet d-none"><code class="language-html">&lt;!-- Small --&gt;
+&lt;div class="modal-dialog modal-sm"&gt;...&lt;/div&gt;
+
+&lt;!-- Large --&gt;
+&lt;div class="modal-dialog modal-lg"&gt;...&lt;/div&gt;
+
+&lt;!-- Extra large --&gt;
+&lt;div class="modal-dialog modal-xl"&gt;...&lt;/div&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="card mb-4">
+                            <div class="card-header fw-semibold">Centered Modal</div>
+                            <div class="card-body">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#centeredModal">
+                                    Vertically Centered
+                                </button>
+                                <div class="code-wrapper">
+                                    <div class="code-header">
+                                        <button class="btn btn-sm btn-outline-primary btn-toggle-code"><i
+                                                class="ph-bold ph-code me-1"></i> Show Code</button>
+                                        <button class="btn btn-sm btn-outline-secondary btn-copy-code"><i
+                                                class="ph-bold ph-copy me-1"></i> Copy</button>
+                                    </div>
+                                    <pre class="code-snippet d-none"><code class="language-html">&lt;div class="modal-dialog modal-dialog-centered"&gt;
+  ...
+&lt;/div&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="card mb-4">
+                            <div class="card-header fw-semibold">Scrollable Modal</div>
+                            <div class="card-body">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#scrollableModal">
+                                    Scrollable Content
+                                </button>
+                                <div class="code-wrapper">
+                                    <div class="code-header">
+                                        <button class="btn btn-sm btn-outline-primary btn-toggle-code"><i
+                                                class="ph-bold ph-code me-1"></i> Show Code</button>
+                                        <button class="btn btn-sm btn-outline-secondary btn-copy-code"><i
+                                                class="ph-bold ph-copy me-1"></i> Copy</button>
+                                    </div>
+                                    <pre class="code-snippet d-none"><code class="language-html">&lt;div class="modal-dialog modal-dialog-scrollable"&gt;
+  ...
+&lt;/div&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Basic Modal -->
+    <div class="modal fade" id="basicModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>This is a basic modal dialog. You can put any content here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Small Modal -->
+    <div class="modal fade" id="smallModal" tabindex="-1">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Small Modal</h5><button type="button" class="btn-close"
+                        data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">Small modal content.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Large Modal -->
+    <div class="modal fade" id="largeModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Large Modal</h5><button type="button" class="btn-close"
+                        data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">Large modal content.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- XL Modal -->
+    <div class="modal fade" id="xlModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Extra Large Modal</h5><button type="button" class="btn-close"
+                        data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">Extra large modal content.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Centered Modal -->
+    <div class="modal fade" id="centeredModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Centered Modal</h5><button type="button" class="btn-close"
+                        data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">This modal is vertically centered.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scrollable Modal -->
+    <div class="modal fade" id="scrollableModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Scrollable Modal</h5><button type="button" class="btn-close"
+                        data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>This is some placeholder content to show a vertically centered modal. We've added some extra copy
+                        here to show how vertically centering the modal works when combined with scrollable modals.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur amet labore.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur amet labore.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur amet labore.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur amet labore.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur amet labore.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/prism/prism.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>

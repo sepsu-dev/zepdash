@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2025 zepdash
+Copyright (c) 2025 zepdash-admin
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,7 @@ This project includes modified portions of code from:
 - [StartBootstrap SB Admin](https://github.com/StartBootstrap/startbootstrap-sb-admin)
   Copyright (c) Start Bootstrap — Licensed under the MIT License.  
 
-zepdash also uses the following open-source libraries:
+zepdash-admin also uses the following open-source libraries:
 
 - [Bootstrap 5](https://getbootstrap.com/) — Licensed under the MIT License.  
 - [Phosphor Icons](https://phosphoricons.com/) — Licensed under the MIT License.

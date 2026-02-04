@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>500 - Server Error</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/phosphor/bold/style.css" />
+    <style>
+        body {
+            background: linear-gradient(135deg, #4a1c40 0%, #1a0a14 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: #fff;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ef4444, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+
+        .error-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .error-text {
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 400px;
+            margin: 0 auto 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-center">
+        <div class="error-code">500</div>
+        <h1 class="error-title">Server Error</h1>
+        <p class="error-text">Something went wrong on our end. Please try again later or contact support.</p>
+        <a href="index.html" class="btn btn-danger btn-lg">
+            <i class="ph-bold ph-house me-2"></i>Back to Dashboard
+        </a>
+    </div>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Select - zepdash-admin</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/phosphor/bold/style.css" />
+    <link href="assets/vendor/prism/prism-light.min.css" rel="stylesheet" />
+</head>
+
+<body class="zd-nav-fixed">
+    <header>
+        <nav class="zd-topnav navbar navbar-expand navbar-light">
+            <div class="navbar-brand ps-3 d-flex align-items-center">
+                <img src="assets/img/logo.png" alt="logo" class="logo-navbar" />
+                <span class="ms-2 fw-semibold">zepdash-admin</span>
+            </div>
+            <button class="btn btn-light" id="sidebarToggle"><i class="ph-bold ph-sidebar-simple"></i></button>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle dropdown-user" href="#" data-bs-toggle="dropdown"><span><i
+                                class="ph-bold ph-user"></i> admin</span></a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div id="layoutSidenav">
+        <aside id="layoutSidenav_nav">
+            <nav class="zd-sidenav accordion zd-sidenav-light" id="sidenavAccordion">
+                <div class="zd-sidenav-menu">
+                    <div class="nav">
+                        <h2 class="zd-sidenav-menu-heading">Menu</h2>
+                        <a class="nav-link" href="index.html">
+                            <div class="zd-nav-link-icon"><i class="ph-bold ph-house"></i></div><span>Dashboard</span>
+                        </a>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#componentsCollapse">
+                            <div class="zd-nav-link-icon"><i class="ph-bold ph-squares-four"></i></div>
+                            <span>Components</span>
+                            <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
+                        </a>
+                        <div class="collapse" id="componentsCollapse" data-bs-parent="#sidenavAccordion">
+                            <nav class="zd-sidenav-menu-nested nav">
+                                <a class="nav-link" href="alerts.html">Alerts</a>
+                                <a class="nav-link" href="badges.html">Badges</a>
+                                <a class="nav-link" href="buttons.html">Buttons</a>
+                                <a class="nav-link" href="cards.html">Cards</a>
+                                <a class="nav-link" href="modals.html">Modals</a>
+                                <a class="nav-link" href="tabs-accordions.html">Tabs & Accordions</a>
+                                <a class="nav-link" href="progress.html">Progress</a>
+                                <a class="nav-link" href="toasts.html">Toasts</a>
+                                <a class="nav-link" href="spinners.html">Spinners</a>
+                            </nav>
+                        </div>
+                        <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#formsCollapse"
+                            aria-expanded="true">
+                            <div class="zd-nav-link-icon"><i class="ph-bold ph-textbox"></i></div><span>Forms</span>
+                            <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
+                        </a>
+                        <div class="collapse show" id="formsCollapse" data-bs-parent="#sidenavAccordion">
+                            <nav class="zd-sidenav-menu-nested nav">
+                                <a class="nav-link" href="forms-basic.html">Basic Inputs</a>
+                                <a class="nav-link active" href="forms-select.html">Select</a>
+                                <a class="nav-link" href="forms-checks.html">Checkboxes & Radios</a>
+                                <a class="nav-link" href="forms-layout.html">Form Layout</a>
+                                <a class="nav-link" href="forms-validation.html">Validation</a>
+                            </nav>
+                        </div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#tablesCollapse">
+                            <div class="zd-nav-link-icon"><i class="ph-bold ph-table"></i></div><span>Tables</span>
+                            <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
+                        </a>
+                        <div class="collapse" id="tablesCollapse" data-bs-parent="#sidenavAccordion">
+                            <nav class="zd-sidenav-menu-nested nav">
+                                <a class="nav-link" href="tables-basic.html">Basic Table</a>
+                                <a class="nav-link" href="tables-datatables.html">DataTables</a>
+                            </nav>
+                        </div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#pagesCollapse">
+                            <div class="zd-nav-link-icon"><i class="ph-bold ph-file"></i></div><span>Pages</span>
+                            <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
+                        </a>
+                        <div class="collapse" id="pagesCollapse" data-bs-parent="#sidenavAccordion">
+                            <nav class="zd-sidenav-menu-nested nav">
+                                <a class="nav-link" href="login.html">Login</a>
+                                <a class="nav-link" href="register.html">Register</a>
+                                <a class="nav-link" href="forgot-password.html">Forgot Password</a>
+                                <a class="nav-link" href="404.html">404 Error</a>
+                                <a class="nav-link" href="500.html">500 Error</a>
+                            </nav>
+                        </div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#utilitiesCollapse">
+                            <div class="zd-nav-link-icon"><i class="ph-bold ph-paint-brush"></i></div>
+                            <span>Utilities</span>
+                            <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
+                        </a>
+                        <div class="collapse" id="utilitiesCollapse" data-bs-parent="#sidenavAccordion">
+                            <nav class="zd-sidenav-menu-nested nav">
+                                <a class="nav-link" href="colors.html">Colors</a>
+                                <a class="nav-link" href="typography.html">Typography</a>
+                                <a class="nav-link" href="icons.html">Icons</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <footer class="zd-sidenav-footer"><small>Logged in as:</small>
+                    <div>admin</div>
+                </footer>
+            </nav>
+        </aside>
+        <main id="layoutSidenav_content">
+            <section class="container-fluid px-4">
+                <header class="my-4">
+                    <h1 class="h4 mb-0">Select</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item">Forms</li>
+                            <li class="breadcrumb-item active">Select</li>
+                        </ol>
+                    </nav>
+                </header>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card mb-4">
+                            <div class="card-header fw-semibold">Default Select</div>
+                            <div class="card-body">
+                                <select class="form-select mb-3">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                                <div class="code-wrapper">
+                                    <div class="code-header">
+                                        <button class="btn btn-sm btn-outline-primary btn-toggle-code"><i
+                                                class="ph-bold ph-code me-1"></i> Show Code</button>
+                                        <button class="btn btn-sm btn-outline-secondary btn-copy-code"><i
+                                                class="ph-bold ph-copy me-1"></i> Copy</button>
+                                    </div>
+                                    <pre class="code-snippet d-none"><code class="language-html">&lt;select class="form-select"&gt;
+  &lt;option selected&gt;Open this select menu&lt;/option&gt;
+  &lt;option value="1"&gt;One&lt;/option&gt;
+  &lt;option value="2"&gt;Two&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card mb-4">
+                            <div class="card-header fw-semibold">Sizing</div>
+                            <div class="card-body">
+                                <select class="form-select form-select-lg mb-3">
+                                    <option>Large select</option>
+                                </select>
+                                <select class="form-select mb-3">
+                                    <option>Default select</option>
+                                </select>
+                                <select class="form-select form-select-sm">
+                                    <option>Small select</option>
+                                </select>
+                                <div class="code-wrapper">
+                                    <div class="code-header">
+                                        <button class="btn btn-sm btn-outline-primary btn-toggle-code"><i
+                                                class="ph-bold ph-code me-1"></i> Show Code</button>
+                                        <button class="btn btn-sm btn-outline-secondary btn-copy-code"><i
+                                                class="ph-bold ph-copy me-1"></i> Copy</button>
+                                    </div>
+                                    <pre class="code-snippet d-none"><code class="language-html">&lt;select class="form-select form-select-lg"&gt;...&lt;/select&gt;
+&lt;select class="form-select form-select-sm"&gt;...&lt;/select&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card mb-4">
+                            <div class="card-header fw-semibold">Multiple Select</div>
+                            <div class="card-body">
+                                <select class="form-select" multiple>
+                                    <option>One</option>
+                                    <option>Two</option>
+                                    <option>Three</option>
+                                    <option>Four</option>
+                                </select>
+                                <div class="code-wrapper">
+                                    <div class="code-header">
+                                        <button class="btn btn-sm btn-outline-primary btn-toggle-code"><i
+                                                class="ph-bold ph-code me-1"></i> Show Code</button>
+                                        <button class="btn btn-sm btn-outline-secondary btn-copy-code"><i
+                                                class="ph-bold ph-copy me-1"></i> Copy</button>
+                                    </div>
+                                    <pre class="code-snippet d-none"><code class="language-html">&lt;select class="form-select" multiple&gt;
+  &lt;option&gt;One&lt;/option&gt;
+  &lt;option&gt;Two&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card mb-4">
+                            <div class="card-header fw-semibold">Disabled</div>
+                            <div class="card-body">
+                                <select class="form-select" disabled>
+                                    <option>Disabled select</option>
+                                </select>
+                                <div class="code-wrapper">
+                                    <div class="code-header">
+                                        <button class="btn btn-sm btn-outline-primary btn-toggle-code"><i
+                                                class="ph-bold ph-code me-1"></i> Show Code</button>
+                                        <button class="btn btn-sm btn-outline-secondary btn-copy-code"><i
+                                                class="ph-bold ph-copy me-1"></i> Copy</button>
+                                    </div>
+                                    <pre
+                                        class="code-snippet d-none"><code class="language-html">&lt;select class="form-select" disabled&gt;...&lt;/select&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/prism/prism.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>
