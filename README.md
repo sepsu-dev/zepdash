@@ -3,13 +3,13 @@
 ![Bootstrap 5](https://img.shields.io/badge/Bootstrap-v5.3-7952b3?style=flat&logo=bootstrap&logoColor=white)
 ![Modern UI](https://img.shields.io/badge/Design-Modern%20SaaS-006fee)
 
-<img src="https://raw.githubusercontent.com/sepsu-dev/zepdash-admin/refs/heads/main/assets/img/logo.png" alt="logo" width="80">
+<img src="https://raw.githubusercontent.com/sepsu-dev/zepdash-admin/refs/heads/main/assets/images/logo.png" alt="logo" width="80">
 
 **zepdash-admin** is a premium, lightweight, and modern admin dashboard template meticulously crafted with **Bootstrap 5**. It features a "Web 3.0" aesthetic with vibrant accents, soft layered shadows, and a clean interface designed for maximum productivity and ease of use.
 
 ---
 
-![Dashboard Preview](assets/img/dashboard-preview-wide.png)
+![Dashboard Preview](assets/images/dashboard-preview-wide.png)
 
 ---
 
@@ -87,7 +87,7 @@ cd zepdash-admin
 ```
 
 ### Customization
-The template uses CSS variables for easy branding. Modify strictly in `assets/css/styles.css`:
+The template uses CSS variables for easy branding. Modify strictly in `assets/styles/styles.css`:
 ```css
 :root {
   --zd-primary: #006fee;

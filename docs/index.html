@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - zepdash-admin</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <!-- Bootstrap -->
+    <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/plugins/phosphor/bold/style.css" />
+
+    <style>
+        :root {
+            --zd-primary: #435ebe;
+            --zd-bg: #f2f7ff;
+            --zd-sidebar-width: 300px;
+            --zd-transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--zd-bg);
+            color: #25396f;
+            overflow-x: hidden;
+        }
+
+        /* Sidebar Styling */
+        .sidebar-wrapper {
+            width: var(--zd-sidebar-width);
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background: #fff;
+            padding: 2rem;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .sidebar-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .sidebar-header img {
+            width: 35px;
+            height: auto;
+            margin-right: 12px;
+        }
+
+        .sidebar-header h4 {
+            font-weight: 700;
+            margin-bottom: 0;
+            color: var(--zd-primary);
+            font-size: 1.5rem;
+        }
+
+        .sidebar-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #96a2b4;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+            padding-left: 0.5rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 0.85rem 1rem;
+            color: #25396f;
+            font-weight: 600;
+            border-radius: 10px;
+            margin-bottom: 0.5rem;
+            transition: var(--zd-transition);
+        }
+
+        .nav-link i {
+            font-size: 1.3em !important;
+            margin-right: 15px;
+            color: var(--zd-primary);
+            transition: var(--zd-transition);
+        }
+
+        .nav-link:hover {
+            background-color: var(--zd-bg-light);
+            color: var(--zd-primary);
+        }
+
+        .nav-link.active {
+            background-color: rgba(0, 111, 238, 0.08);
+            /* Dashboard active style */
+            color: var(--zd-primary) !important;
+            font-weight: 600;
+            box-shadow: none;
+        }
+
+        .nav-link.active i {
+            color: var(--zd-primary) !important;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: var(--zd-sidebar-width);
+            padding: 3rem 4rem;
+        }
+
+        .page-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #25396f;
+        }
+
+        .doc-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+            border: none;
+        }
+
+        .doc-card h3 {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: #25396f;
+        }
+
+        .doc-card p {
+            color: #556080;
+            font-size: 1.05rem;
+        }
+
+        .code-inline {
+            background: #ebf0f7;
+            color: #e91e63;
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 0.9em;
+        }
+
+        .code-block {
+            background: #25396f;
+            color: #fff;
+            padding: 1.5rem;
+            border-radius: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .steps-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .steps-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: #556080;
+        }
+
+        .steps-list li::before {
+            content: counter(step-counter) ".";
+            counter-increment: step-counter;
+            font-weight: 700;
+            margin-right: 10px;
+            color: #96a2b4;
+        }
+
+        .steps-list {
+            counter-reset: step-counter;
+        }
+
+        footer {
+            margin-top: 5rem;
+            padding: 2rem 0;
+            color: #96a2b4;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .sidebar-wrapper {
+                transform: translateX(-100%);
+                transition: var(--zd-transition);
+            }
+
+            .sidebar-active .sidebar-wrapper {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar-wrapper">
+        <div class="sidebar-header">
+            <img src="../assets/images/logo.png" alt="logo">
+            <h4>zepdash</h4>
+        </div>
+
+        <div class="sidebar-title">Menu</div>
+        <nav class="nav flex-column">
+            <a class="nav-link active" href="#installation">
+                <i class="ph-bold ph-squares-four"></i>
+                <span>Installation</span>
+            </a>
+            <a class="nav-link" href="#customization">
+                <i class="ph-bold ph-palette"></i>
+                <span>Customizing</span>
+            </a>
+            <a class="nav-link" href="#structure">
+                <i class="ph-bold ph-folder"></i>
+                <span>Structure</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-title">Support</div>
+        <nav class="nav flex-column">
+            <a class="nav-link" href="#donate">
+                <i class="ph-bold ph-hand-heart"></i>
+                <span>Donate</span>
+            </a>
+            <a class="nav-link" href="#contact">
+                <i class="ph-bold ph-phone"></i>
+                <span>Contact Developer</span>
+            </a>
+        </nav>
+
+        <div class="mt-5 pt-5">
+            <a href="../index.html" class="nav-link text-muted">
+                <i class="ph-bold ph-arrow-left"></i>
+                <span>Landing Page</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1 class="page-title">Installation</h1>
+
+        <div id="installation" class="doc-card">
+            <h3>Installation Steps</h3>
+            <ol class="steps-list">
+                <li>Extract the project files to your directory.</li>
+                <li>Ensure you have a local server (like Live Server or XAMPP) or simply open the files in a browser.
+                </li>
+                <li>Explore the template starting from <span class="code-inline">demo/dashboard-analytics.html</span>
+                </li>
+                <li>Hooray! Now you can use it in your project.</li>
+            </ol>
+        </div>
+
+        <div id="structure" class="doc-card">
+            <h3>Folder Structure</h3>
+            <p>Our project is organized to be intuitive and easy to navigate:</p>
+            <div class="code-block">
+                zepdash-admin/<br>
+                ├── assets/ # Global CSS, JS, Images, and Plugins<br>
+                ├── demo/ # All Dashboard pages (The Live Demo)<br>
+                ├── docs/ # Documentation and Instructions<br>
+                └── index.html # Premium Landing Page
+            </div>
+        </div>
+
+        <div id="customization" class="doc-card">
+            <h3>Customizing Styles</h3>
+            <p>You can easily customize the core colors and layout by editing the CSS variables:</p>
+            <div class="code-block">
+                /* assets/styles/styles.css */<br>
+                :root {<br>
+                &nbsp;&nbsp;--zd-primary: #006fee;<br>
+                &nbsp;&nbsp;--zd-radius: 12px;<br>
+                }
+            </div>
+        </div>
+
+        <div id="donate" class="doc-card text-center">
+            <i class="ph-bold ph-hand-heart text-danger mb-3" style="font-size: 3rem;"></i>
+            <h3>Support the Project</h3>
+            <p>If you find this template useful and want to support further development.</p>
+            <a href="#" class="btn btn-primary px-4 py-2 mt-2"
+                style="background: var(--zd-primary); border: none; border-radius: 10px;">Donate Now</a>
+        </div>
+
+        <footer>
+            2026 &copy; zepdash-admin
+        </footer>
+    </main>
+
+    <script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/plugins/jquery/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.nav-link').on('click', function () {
+                $('.nav-link').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

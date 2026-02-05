@@ -2,385 +2,149 @@
 <html lang="en">
 
 <head>
-  <!-- Basic SEO -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Analytics Dash - zepdash-admin</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zepdash - Free Admin Dashboard Template</title>
 
-  <!-- Meta SEO -->
-  <meta name="description" content="zepdash-admin is a modern Bootstrap-based admin dashboard" />
-  <meta name="keywords" content="zepdash-admin, admin dashboard, bootstrap, webapp" />
-  <meta name="author" content="sepsu-dev" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://zepdash-admin.vercel.app/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="zepdash-admin - Modern Admin Dashboard" />
-  <meta property="og:description" content="A Bootstrap-based admin dashboard" />
-  <meta property="og:image" content="https://zepdash-admin.vercel.app/assets/img/logo.png" />
-  <meta property="og:url" content="https://zepdash-admin.vercel.app/" />
-  <meta property="og:type" content="website" />
+    <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <style>
+        :root {
+            --zd-primary: #006fee;
+            --zd-secondary: #71717a;
+            --zd-text: #11181c;
+            --zd-accent: #3e94ff;
+        }
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: var(--zd-text);
+            background-color: #fcfcfc;
+            margin: 0;
+        }
 
-  <!-- Styles -->
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="assets/css/styles.css" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/animate.min.css" />
-  <link rel="stylesheet" href="assets/css/sweetalert2.min.css" />
-  <link rel="stylesheet" href="assets/css/tempus-dominus.min.css" />
-  <link rel="stylesheet" href="assets/css/select2.min.css" />
-  <link rel="stylesheet" href="assets/css/select2-bootstrap-5-theme.min.css" />
-  <link rel="stylesheet" href="assets/css/simplebar.min.css" />
-  <link rel="stylesheet" href="assets/css/phosphor/bold/style.css" />
-  <link rel="stylesheet" href="assets/css/phosphor/regular/style.css" />
-  <link rel="stylesheet" href="assets/css/phosphor/fill/style.css" />
+        /* Hero Section */
+        .hero-section {
+            padding: 60px 0 60px;
+            background: radial-gradient(circle at center, rgba(216, 241, 230, 0.4) 0%, rgba(255, 255, 255, 1) 100%);
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 30px;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #11181c 0%, #006fee 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--zd-secondary);
+            margin: 0 auto 3rem;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        /* Centered Hero Image */
+        .hero-image-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto 1.2rem;
+        }
+
+        .hero-image {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        /* Buttons */
+        .btn-premium {
+            padding: 0.6rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary-zd {
+            background-color: var(--zd-primary);
+            color: white;
+            border: none;
+            box-shadow: 0 10px 20px rgba(0, 111, 238, 0.2);
+        }
+
+        .btn-primary-zd:hover {
+            transform: translateY(-3px);
+            background-color: var(--zd-accent);
+            color: white;
+            box-shadow: 0 15px 25px rgba(0, 111, 238, 0.3);
+        }
+
+        .btn-outline-zd {
+            border: 2px solid var(--zd-primary);
+            color: var(--zd-primary);
+            background: transparent;
+        }
+
+        .btn-outline-zd:hover {
+            background: rgba(0, 111, 238, 0.05);
+            color: var(--zd-primary);
+            transform: translateY(-3px);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 
-<body class='zd-nav-fixed'>
-  <div id='mpa-loader'></div>
-
-  <header>
-    <nav class="zd-topnav navbar navbar-expand navbar-light">
-      <div class="navbar-brand ps-3 d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="logo" class="logo-navbar" />
-        <span class="ms-2 fw-semibold">zepdash-admin</span>
-      </div>
-
-      <button class="btn btn-light" id="sidebarToggle" aria-label="Toggle sidebar">
-        <i class="ph-bold ph-sidebar-simple"></i>
-      </button>
-
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle dropdown-user" id="navbarDropdown" href="#" role="button"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            <span><i class="ph-bold ph-user"></i> admin</span>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Profile</a></li>
-            <li><a class="dropdown-item" href="#">Change Password</a></li>
-            <li><a class="dropdown-item" href="#">Logout</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </header>
-
-  <div id="layoutSidenav">
-    <aside id="layoutSidenav_nav">
-      <nav class="zd-sidenav accordion zd-sidenav-light" id="sidenavAccordion">
-        <div class="zd-sidenav-menu" data-simplebar>
-          <div class="nav">
-            <h2 class="zd-sidenav-menu-heading">Menu</h2>
-
-            <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#dashboardCollapse"
-              aria-expanded="true">
-              <div class="zd-nav-link-icon"><i class="ph-bold ph-house"></i></div>
-              <span>Dashboard</span>
-              <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
-            </a>
-            <div class="collapse show" id="dashboardCollapse" data-bs-parent="#sidenavAccordion">
-              <nav class="zd-sidenav-menu-nested nav">
-                <a class="nav-link active" href="index.html">Analytics</a>
-                <a class="nav-link " href="dashboard-crm.html">CRM</a>
-                <a class="nav-link " href="dashboard-ecommerce.html">Ecommerce</a>
-              </nav>
-            </div>
-
-            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#componentsCollapse">
-              <div class="zd-nav-link-icon"><i class="ph-bold ph-squares-four"></i></div>
-              <span>Components</span>
-              <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
-            </a>
-
-            <div class="collapse" id="componentsCollapse" data-bs-parent="#sidenavAccordion">
-              <nav class="zd-sidenav-menu-nested nav">
-                <a class="nav-link" href="alerts.html">Alerts</a>
-                <a class="nav-link" href="badges.html">Badges</a>
-                <a class="nav-link" href="buttons.html">Buttons</a>
-                <a class="nav-link" href="cards.html">Cards</a>
-                <a class="nav-link" href="modals.html">Modals</a>
-                <a class="nav-link" href="tabs-accordions.html">Tabs & Accordions</a>
-                <a class="nav-link" href="progress.html">Progress</a>
-                <a class="nav-link" href="toasts.html">Toasts</a>
-                <a class="nav-link" href="spinners.html">Spinners</a>
-              </nav>
-            </div>
-
-            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#formsCollapse">
-              <div class="zd-nav-link-icon"><i class="ph-bold ph-textbox"></i></div>
-              <span>Forms</span>
-              <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
-            </a>
-
-            <div class="collapse" id="formsCollapse" data-bs-parent="#sidenavAccordion">
-              <nav class="zd-sidenav-menu-nested nav">
-                <a class="nav-link" href="forms-basic.html">Basic Inputs</a>
-                <a class="nav-link" href="forms-select.html">Select</a>
-                <a class="nav-link" href="forms-checks.html">Checkboxes & Radios</a>
-                <a class="nav-link" href="forms-layout.html">Form Layout</a>
-                <a class="nav-link" href="forms-validation.html">Validation</a>
-              </nav>
-            </div>
-
-            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#tablesCollapse">
-              <div class="zd-nav-link-icon"><i class="ph-bold ph-table"></i></div>
-              <span>Tables</span>
-              <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
-            </a>
-
-            <div class="collapse" id="tablesCollapse" data-bs-parent="#sidenavAccordion">
-              <nav class="zd-sidenav-menu-nested nav">
-                <a class="nav-link" href="tables-basic.html">Basic Table</a>
-                <a class="nav-link" href="tables-datatables.html">DataTables</a>
-              </nav>
-            </div>
-
-            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapse">
-              <div class="zd-nav-link-icon"><i class="ph-bold ph-file"></i></div>
-              <span>Pages</span>
-              <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
-            </a>
-
-            <div class="collapse" id="pagesCollapse" data-bs-parent="#sidenavAccordion">
-              <nav class="zd-sidenav-menu-nested nav">
-                <a class="nav-link" href="login.html">Login</a>
-                <a class="nav-link" href="register.html">Register</a>
-                <a class="nav-link" href="forgot-password.html">Forgot Password</a>
-                <a class="nav-link" href="404.html">404 Error</a>
-                <a class="nav-link" href="500.html">500 Error</a>
-              </nav>
-            </div>
-
-            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#utilitiesCollapse">
-              <div class="zd-nav-link-icon"><i class="ph-bold ph-paint-brush"></i></div>
-              <span>Utilities</span>
-              <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
-            </a>
-
-            <div class="collapse" id="utilitiesCollapse" data-bs-parent="#sidenavAccordion">
-              <nav class="zd-sidenav-menu-nested nav">
-                <a class="nav-link" href="colors.html">Colors</a>
-                <a class="nav-link" href="typography.html">Typography</a>
-                <a class="nav-link" href="icons.html">Icons</a>
-              </nav>
-            </div>
-
-          </div>
-        </div>
-
-        <footer class="zd-sidenav-footer">
-          <small>Logged in as:</small>
-          <div>admin</div>
-        </footer>
-      </nav>
-    </aside>
-
-    <main id="layoutSidenav_content">
-      <section class="container-fluid px-4 pb-5">
-        <header class="my-4 d-flex justify-content-between align-items-center">
-          <div>
-            <h1 class="h4 mb-0 fw-bold">Dashboard Analytics</h1>
-            <p class="text-muted small mb-0">Welcome back, here's what's happening today.</p>
-          </div>
-          <div class="d-flex gap-2">
-            <button class="btn btn-sm btn-white border shadow-sm px-3"><i class="ph-bold ph-calendar-blank me-1"></i>
-              Today</button>
-            <button class="btn btn-sm btn-primary shadow-sm px-3"><i class="ph-bold ph-download-simple me-1"></i>
-              Export</button>
-          </div>
-        </header>
-
-        <!-- Stats Row -->
-        <div class="row mb-2">
-          <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-0 shadow-sm stats-card animate__animated animate__fadeIn">
-              <div class="stats-icon icon-blue">
-                <i class="ph-bold ph-currency-dollar"></i>
-              </div>
-              <div class="stats-info">
-                <span>Total Revenue</span>
-                <h3>$24,560 <span class="trend-indicator trend-up"><i class="ph-bold ph-trend-up"></i> 12%</span></h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-0 shadow-sm stats-card animate__animated animate__fadeIn">
-              <div class="stats-icon icon-success">
-                <i class="ph-bold ph-shopping-cart"></i>
-              </div>
-              <div class="stats-info">
-                <span>Total Sales</span>
-                <h3>1,204 <span class="trend-indicator trend-up"><i class="ph-bold ph-trend-up"></i> 8%</span></h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-0 shadow-sm stats-card animate__animated animate__fadeIn">
-              <div class="stats-icon icon-warning">
-                <i class="ph-bold ph-users"></i>
-              </div>
-              <div class="stats-info">
-                <span>New Customers</span>
-                <h3>456 <span class="trend-indicator trend-down"><i class="ph-bold ph-trend-down"></i> 3%</span></h3>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-0 shadow-sm stats-card animate__animated animate__fadeIn">
-              <div class="stats-icon icon-danger">
-                <i class="ph-bold ph-eye"></i>
-              </div>
-              <div class="stats-info">
-                <span>Site Visits</span>
-                <h3>12.4k <span class="trend-indicator trend-up"><i class="ph-bold ph-trend-up"></i> 24%</span></h3>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row align-items-stretch">
-          <div class="col-lg-8 mb-4">
-            <div class="card border-0 shadow-sm h-100 animate__animated animate__fadeIn">
-              <div class="card-header bg-transparent border-0 pt-4 px-4 fw-bold">Revenue Growth</div>
-              <div class="card-body">
-                <div id="barChart" class="chart-container" style="height: 320px;"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 mb-4">
-            <div class="card border-0 shadow-sm h-100 animate__animated animate__fadeIn">
-              <div class="card-header bg-transparent border-0 pt-4 px-4 fw-bold">Traffic Source</div>
-              <div class="card-body">
-                <div id="pieChart" class="chart-container" style="height: 320px;"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Recent Transactions -->
-        <div class="row">
-          <div class="col-12">
-            <div class="card border-0 shadow-sm animate__animated animate__fadeIn">
-              <div
-                class="card-header d-flex justify-content-between align-items-center bg-transparent border-0 pt-4 px-4">
-                <span class="fw-bold">Recent Transactions</span>
-                <a href="tables-basic.html" class="btn btn-sm btn-light border px-3">View All</a>
-              </div>
-              <div class="card-body px-0 pb-0">
-                <div class="table-responsive">
-                  <table class="table table-hover align-middle mb-0">
-                    <thead style="background: #f8fafc;">
-                      <tr>
-                        <th class="ps-4 border-0">Order ID</th>
-                        <th class="border-0">Customer</th>
-                        <th class="border-0">Amount</th>
-                        <th class="border-0">Date</th>
-                        <th class="border-0">Status</th>
-                        <th class="pe-4 text-end border-0">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="ps-4 fw-medium text-primary">#ORD-001</td>
-                        <td>
-                          <div class="d-flex align-items-center">
-                            <div
-                              class="avatar-sm me-2 bg-light rounded-circle d-flex align-items-center justify-content-center"
-                              style="width: 32px; height: 32px; font-size: 0.8rem; font-weight: 600;">RF</div>
-                            Robert Fox
-                          </div>
-                        </td>
-                        <td>$124.00</td>
-                        <td>Mar 12, 2024</td>
-                        <td><span class="badge bg-success-subtle text-success border-0 px-2 py-1">Completed</span></td>
-                        <td class="pe-4 text-end">
-                          <button class="btn btn-sm btn-light border px-2">Details</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="ps-4 fw-medium text-primary">#ORD-002</td>
-                        <td>
-                          <div class="d-flex align-items-center">
-                            <div
-                              class="avatar-sm me-2 bg-light rounded-circle d-flex align-items-center justify-content-center"
-                              style="width: 32px; height: 32px; font-size: 0.8rem; font-weight: 600;">JC</div>
-                            Jane Cooper
-                          </div>
-                        </td>
-                        <td>$89.00</td>
-                        <td>Mar 11, 2024</td>
-                        <td><span class="badge bg-warning-subtle text-warning border-0 px-2 py-1">Pending</span></td>
-                        <td class="pe-4 text-end">
-                          <button class="btn btn-sm btn-light border px-2">Details</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="ps-4 fw-medium text-primary">#ORD-003</td>
-                        <td>
-                          <div class="d-flex align-items-center">
-                            <div
-                              class="avatar-sm me-2 bg-light rounded-circle d-flex align-items-center justify-content-center"
-                              style="width: 32px; height: 32px; font-size: 0.8rem; font-weight: 600;">GH</div>
-                            Guy Hawkins
-                          </div>
-                        </td>
-                        <td>$256.00</td>
-                        <td>Mar 10, 2024</td>
-                        <td><span class="badge bg-success-subtle text-success border-0 px-2 py-1">Completed</span></td>
-                        <td class="pe-4 text-end">
-                          <button class="btn btn-sm btn-light border px-2">Details</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="ps-4 fw-medium text-primary">#ORD-004</td>
-                        <td>
-                          <div class="d-flex align-items-center">
-                            <div
-                              class="avatar-sm me-2 bg-light rounded-circle d-flex align-items-center justify-content-center"
-                              style="width: 32px; height: 32px; font-size: 0.8rem; font-weight: 600;">BC</div>
-                            Bessie Cooper
-                          </div>
-                        </td>
-                        <td>$45.00</td>
-                        <td>Mar 10, 2024</td>
-                        <td><span class="badge bg-danger-subtle text-danger border-0 px-2 py-1">Cancelled</span></td>
-                        <td class="pe-4 text-end">
-                          <button class="btn btn-sm btn-light border px-2">Details</button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+<body>
+    <header class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h1 class="hero-title">Zepdash - Modern Admin Dashboard</h1>
+                    <p class="hero-subtitle">
+                        A high-performance admin template built with Bootstrap 5.
+                        The perfect solution for your CRM, E-commerce, and Analytics systems.
+                    </p>
                 </div>
-              </div>
             </div>
-          </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-11">
+                    <div class="hero-image-container">
+                        <img src="assets/images/banner.png" alt="zepdash" class="hero-image rounded shadow">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="button-group">
+                        <a href="demo/dashboard-analytics.html" class="btn btn-premium btn-primary-zd">View Live
+                            Demo</a>
+                        <a href="docs/index.html" class="btn btn-premium btn-outline-zd">Documentation</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </section>
-    </main>
-  </div>
+    </header>
 
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/sweetalert2.all.min.js"></script>
-  <script src="assets/js/popper.min.js"></script>
-  <script src="assets/js/tempus-dominus.min.js"></script>
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/select2.min.js"></script>
-  <script src="assets/js/simplebar.min.js"></script>
-  <script src="assets/js/scripts.js"></script>
-  <script src="assets/js/echarts.min.js"></script>
-  <!-- Dashboard specific charts -->
-  <script src="assets/js/pages/dashboard-analytics.js"></script>
-
+    <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

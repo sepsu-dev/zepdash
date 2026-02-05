@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spinners - zepdash-admin</title>
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/plugins/nprogress/nprogress.min.css" />
+  <link href="../assets/styles/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/plugins/animate/animate.min.css" />
+    <link rel="stylesheet" href="../assets/plugins/sweetalert2/sweetalert2.min.css" />
+    <link rel="stylesheet" href="../assets/plugins/tempus-dominus/css/tempus-dominus.min.css" />
+    <link rel="stylesheet" href="../assets/plugins/select2/css/select2.min.css" /><link rel="stylesheet" href="../assets/plugins/select2/css/select2-bootstrap-5-theme.min.css" />
+    <link rel="stylesheet" href="../assets/plugins/simplebar/simplebar.min.css" />
+    <link rel="stylesheet" href="../assets/plugins/phosphor/bold/style.css" />
+    </head>
+
+<body class='zd-nav-fixed'>
+<header>
+        <nav class="zd-topnav navbar navbar-expand navbar-light">
+            <div class="navbar-brand ps-3 d-flex align-items-center">
+                <img src="../assets/images/logo.png" alt="logo" class="logo-navbar" />
+                <span class="ms-2 fw-semibold">zepdash-admin</span>
+            </div>
+      <button class="btn btn-light" id="sidebarToggle" aria-label="Toggle sidebar">
+        <i class="ph-bold ph-sidebar-simple"></i>
+      </button>
+
+      <ul class="navbar-nav ms-auto align-items-center">
+        <!-- Notifications -->
+        <li class="nav-item dropdown me-2">
+          <a class="nav-link nav-icon" href="#" id="notifDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="ph-bold ph-bell"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-light" style="font-size: 0.65rem; padding: 0.35em 0.5em; margin-top: 10px; margin-left: -8px;">
+              3
+            </span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 notifications-dropdown" aria-labelledby="notifDropdown">
+            <li class="p-3 border-bottom d-flex justify-content-between align-items-center">
+              <h6 class="mb-0 fw-bold">Notifications</h6>
+              <span class="badge bg-primary-subtle text-primary extra-small">3 New</span>
+            </li>
+            <div data-simplebar style="max-height: 300px;">
+              <a href="#" class="notification-item">
+                <div class="notification-icon bg-primary-subtle text-primary">
+                  <i class="ph-bold ph-user-plus"></i>
+                </div>
+                <div>
+                  <p class="mb-1 small fw-bold">New user registered</p>
+                  <p class="mb-0 extra-small text-muted">A few seconds ago</p>
+                </div>
+              </a>
+              <a href="#" class="notification-item">
+                <div class="notification-icon bg-success-subtle text-success">
+                  <i class="ph-bold ph-shopping-cart"></i>
+                </div>
+                <div>
+                  <p class="mb-1 small fw-bold">New order received</p>
+                  <p class="mb-0 extra-small text-muted">2 minutes ago</p>
+                </div>
+              </a>
+              <a href="#" class="notification-item">
+                <div class="notification-icon bg-warning-subtle text-warning">
+                  <i class="ph-bold ph-warning"></i>
+                </div>
+                <div>
+                  <p class="mb-1 small fw-bold">Server threshold alert</p>
+                  <p class="mb-0 extra-small text-muted">1 hour ago</p>
+                </div>
+              </a>
+            </div>
+            <li class="p-2 text-center border-top">
+              <a href="#" class="text-primary extra-small fw-bold text-decoration-none">View all notifications</a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- User Profile -->
+        <li class="nav-item dropdown ms-1">
+          <a class="nav-link p-0" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="../assets/images/user-avatar.png" alt="user" class="rounded-circle border" style="width: 38px; height: 38px; object-fit: cover;" />
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 overflow-hidden" aria-labelledby="navbarDropdown" style="min-width: 240px;">
+            <li class="p-3 bg-light">
+              <div class="d-flex align-items-center">
+                <img src="../assets/images/user-avatar.png" alt="user" class="rounded-circle border" style="width: 48px; height: 48px; object-fit: cover;" />
+                <div class="ms-3">
+                  <h6 class="mb-0 fw-bold">Valerie Luna</h6>
+                  <p class="mb-0 text-muted extra-small">vluna@aol.com</p>
+                </div>
+              </div>
+            </li>
+            <li><hr class="dropdown-divider m-0 opacity-10"></li>
+            <li>
+                <a class="dropdown-item d-flex align-items-center" href="profile.html">
+                    <i class="ph-bold ph-gear me-3 text-muted"></i> Account
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item d-flex align-items-center text-danger" href="login.html">
+                    <i class="ph-bold ph-sign-out me-3"></i> Logout
+                </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+</nav>
+    </header>
+    <div id="layoutSidenav">
+        <aside id="layoutSidenav_nav">
+            <nav class="zd-sidenav accordion zd-sidenav-light" id="sidenavAccordion">
+                <div class="zd-sidenav-menu" data-simplebar>
+                    <div class="nav">
+                        <h2 class="zd-sidenav-menu-heading">Menu</h2>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#dashboardCollapse">
+                            <div class="zd-nav-link-icon"><i class="ph-bold ph-house"></i></div>
+                            <span>Dashboard</span>
+                            <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
+                        </a>
+                        <div class="collapse" id="dashboardCollapse" data-bs-parent="#sidenavAccordion">
+                            <nav class="zd-sidenav-menu-nested nav">
+                                <a class="nav-link" href="dashboard-analytics.html">Analytics</a>
+                                <a class="nav-link" href="dashboard-crm.html">CRM</a>
+                                <a class="nav-link" href="dashboard-ecommerce.html">Ecommerce</a>
+                                          </nav>
+            </div>
+                        <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#componentsCollapse"
+                            aria-expanded="true">
+                            <div class="zd-nav-link-icon"><i class="ph-bold ph-squares-four"></i></div>
+                            <span>Components</span>
+                            <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
+                        </a>
+                        <div class="collapse show" id="componentsCollapse" data-bs-parent="#sidenavAccordion">
+                            <nav class="zd-sidenav-menu-nested nav">
+                                <a class="nav-link" href="alerts.html">Alerts</a>
+                                <a class="nav-link" href="badges.html">Badges</a>
+                                <a class="nav-link" href="buttons.html">Buttons</a>
+                                <a class="nav-link" href="cards.html">Cards</a>
+                                <a class="nav-link" href="modals.html">Modals</a>
+                                <a class="nav-link" href="tabs-accordions.html">Tabs & Accordions</a>
+                                <a class="nav-link" href="progress.html">Progress</a>
+                                <a class="nav-link" href="toasts.html">Toasts</a>
+                                <a class="nav-link active" href="spinners.html">Spinners</a>
+                                          </nav>
+            </div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#formsCollapse">
+                            <div class="zd-nav-link-icon"><i class="ph-bold ph-textbox"></i></div><span>Forms</span>
+                            <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
+                        </a>
+                        <div class="collapse" id="formsCollapse" data-bs-parent="#sidenavAccordion">
+                            <nav class="zd-sidenav-menu-nested nav">
+                                <a class="nav-link" href="forms-basic.html">Basic Inputs</a>
+                                <a class="nav-link" href="forms-select.html">Select</a>
+                                <a class="nav-link" href="forms-checks.html">Checkboxes & Radios</a>
+                                <a class="nav-link" href="forms-layout.html">Form Layout</a>
+                                <a class="nav-link" href="forms-validation.html">Validation</a>
+                                          </nav>
+            </div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#tablesCollapse">
+                            <div class="zd-nav-link-icon"><i class="ph-bold ph-table"></i></div><span>Tables</span>
+                            <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
+                        </a>
+                        <div class="collapse" id="tablesCollapse" data-bs-parent="#sidenavAccordion">
+                            <nav class="zd-sidenav-menu-nested nav">
+                                <a class="nav-link" href="tables-basic.html">Basic Table</a>
+                                <a class="nav-link" href="tables-datatables.html">DataTables</a>
+                                          </nav>
+            </div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#pagesCollapse">
+                            <div class="zd-nav-link-icon"><i class="ph-bold ph-file"></i></div><span>Pages</span>
+                            <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
+                        </a>
+                        <div class="collapse" id="pagesCollapse" data-bs-parent="#sidenavAccordion">
+                            <nav class="zd-sidenav-menu-nested nav">
+                <a class="nav-link" href="profile.html">Profile</a>
+                <a class="nav-link" href="change-password.html">Change Password</a>
+                <a class="nav-link" href="login.html">Login</a>
+                <a class="nav-link" href="register.html">Register</a>
+                <a class="nav-link" href="forgot-password.html">Forgot Password</a>
+                <a class="nav-link" href="starter.html">Starter Page</a>
+                <a class="nav-link" href="blank.html">Blank Page</a>
+                <a class="nav-link" href="404.html">404 Error</a>
+                <a class="nav-link" href="500.html">500 Error</a>
+              </nav>
+            </div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                            data-bs-target="#utilitiesCollapse">
+                            <div class="zd-nav-link-icon"><i class="ph-bold ph-paint-brush"></i></div>
+                            <span>Utilities</span>
+                            <div class="zd-sidenav-collapse-arrow"><i class="ph-bold ph-caret-down"></i></div>
+                        </a>
+                        <div class="collapse" id="utilitiesCollapse" data-bs-parent="#sidenavAccordion">
+                            <nav class="zd-sidenav-menu-nested nav">
+                                <a class="nav-link" href="colors.html">Colors</a>
+                                <a class="nav-link" href="typography.html">Typography</a>
+                                <a class="nav-link" href="icons.html">Icons</a>
+                                          </nav>
+            </div>
+                    </div>
+                </div>
+                <footer class="zd-sidenav-footer"><small>Logged in as:</small>
+                    <div>admin</div>
+                </footer>
+            </nav>
+        </aside>
+        <main id="layoutSidenav_content">
+            <section class="container-fluid px-4">
+                <header class="my-4">
+                    <h1 class="h4 mb-0">Spinners</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="dashboard-analytics.html">Dashboard</a></li>
+                            <li class="breadcrumb-item">Components</li>
+                            <li class="breadcrumb-item active">Spinners</li>
+                        </ol>
+                    </nav>
+                </header>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card animate__animated animate__fadeIn mb-4">
+                            <div class="card-header fw-semibold">Border Spinner</div>
+                            <div class="card-body">
+                                <div class="spinner-border text-primary me-2" role="status"><span
+                                        class="visually-hidden">Loading...</span></div>
+                                <div class="spinner-border text-success me-2" role="status"></div>
+                                <div class="spinner-border text-danger" role="status"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card animate__animated animate__fadeIn mb-4">
+                            <div class="card-header fw-semibold">Growing Spinner</div>
+                            <div class="card-body">
+                                <div class="spinner-grow text-primary me-2" role="status"><span
+                                        class="visually-hidden">Loading...</span></div>
+                                <div class="spinner-grow text-success me-2" role="status"></div>
+                                <div class="spinner-grow text-warning" role="status"></div>
+                                    <pre
+                                        class="code-snippet d-none"><code class="language-html">&lt;div class="spinner-grow text-primary" role="status"&gt;...&lt;/div&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card animate__animated animate__fadeIn mb-4">
+                            <div class="card-header fw-semibold">Sizes</div>
+                            <div class="card-body">
+                                <div class="spinner-border spinner-border-sm me-2" role="status"></div>
+                                <div class="spinner-border me-2" role="status"></div>
+                                <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card animate__animated animate__fadeIn mb-4">
+                            <div class="card-header fw-semibold">Buttons with Spinners</div>
+                            <div class="card-body">
+                                <button class="btn btn-primary" type="button" disabled>
+                                    <span class="spinner-border spinner-border-sm me-2"></span>Loading...
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+  <script src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/plugins/sweetalert2/sweetalert2.all.min.js"></script>
+  <script src="../assets/plugins/popper/popper.min.js"></script><script src="../assets/plugins/tempus-dominus/js/tempus-dominus.min.js"></script>
+  <script src="../assets/plugins/jquery/jquery.min.js"></script><script src="../assets/plugins/select2/js/select2.min.js"></script>
+  <script src="../assets/plugins/simplebar/simplebar.min.js"></script>
+  <script src="../assets/plugins/nprogress/nprogress.min.js"></script>
+  <script src="../assets/scripts/scripts.js"></script>
+</body>
+
+</html>
