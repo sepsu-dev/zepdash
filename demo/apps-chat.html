@@ -201,6 +201,58 @@
                         </li>
                     </ul>
                 </li>
+                <!-- Notifications -->
+                <li class="nav-item dropdown me-2">
+                    <a class="nav-link nav-icon" href="#" id="notifDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="ph-bold ph-bell"></i>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-light"
+                            style="font-size: 0.65rem; padding: 0.35em 0.5em; margin-top: 10px; margin-left: -8px;">
+                            3
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 notifications-dropdown"
+                        aria-labelledby="notifDropdown">
+                        <li class="p-3 border-bottom d-flex justify-content-between align-items-center">
+                            <h6 class="mb-0 fw-bold">Notifications</h6>
+                            <span class="badge bg-primary-subtle text-primary extra-small">3 New</span>
+                        </li>
+                        <div data-simplebar style="max-height: 300px;">
+                            <a href="#" class="notification-item">
+                                <div class="notification-icon bg-primary-subtle text-primary">
+                                    <i class="ph-bold ph-user-plus"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-1 small fw-bold">New user registered</p>
+                                    <p class="mb-0 extra-small text-muted">A few seconds ago</p>
+                                </div>
+                            </a>
+                            <a href="#" class="notification-item">
+                                <div class="notification-icon bg-success-subtle text-success">
+                                    <i class="ph-bold ph-shopping-cart"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-1 small fw-bold">New order received</p>
+                                    <p class="mb-0 extra-small text-muted">2 minutes ago</p>
+                                </div>
+                            </a>
+                            <a href="#" class="notification-item">
+                                <div class="notification-icon bg-warning-subtle text-warning">
+                                    <i class="ph-bold ph-warning"></i>
+                                </div>
+                                <div>
+                                    <p class="mb-1 small fw-bold">Server threshold alert</p>
+                                    <p class="mb-0 extra-small text-muted">1 hour ago</p>
+                                </div>
+                            </a>
+                        </div>
+                        <li class="p-2 text-center border-top">
+                            <a href="#" class="text-primary extra-small fw-bold text-decoration-none">View all
+                                notifications</a>
+                        </li>
+                    </ul>
+                </li>
                 <!-- User Profile (Snipped for brevity in this scratch, but will be full in file) -->
                 <li class="nav-item dropdown ms-1">
                     <a class="nav-link p-0" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
@@ -251,7 +303,7 @@
                                 <a class="nav-link" href="dashboard-analytics.html">Analytics</a>
                                 <a class="nav-link" href="dashboard-crm.html">CRM</a>
                                 <a class="nav-link" href="dashboard-ecommerce.html">Ecommerce</a>
-    <a class="nav-link" href="dashboard-finance.html">Finance</a>
+                                <a class="nav-link" href="dashboard-finance.html">Finance</a>
                             </nav>
                         </div>
                         <h2 class="zd-sidenav-menu-heading">Applications</h2>
